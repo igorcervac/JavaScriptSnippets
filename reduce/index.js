@@ -1,8 +1,9 @@
 const all_cities = [
-    {name: 'Montreal', population: 1762949}, 
-    {name: 'Quebec City', population: 549459}, 
-    {name: 'Sherbrooke', population: 172950},
-    {name:'Gatineau', population: 284557}
+    {name: 'Montreal', population: 1762949, province: 'Quebec'}, 
+    {name: 'Quebec City', population: 549459, province: 'Quebec'}, 
+    {name: 'Sherbrooke', population: 172950, province: 'Quebec'},
+    {name:'Gatineau', population: 284557, province: 'Quebec'},
+    {name: 'Ottawa', population: 994837, province: 'Ontario'}
 ];
 
 const all_cities_population = all_cities.reduce((acc, city) => acc + city.population, 0);
@@ -23,3 +24,7 @@ console.info('City with min. population: ', minCity.name, minCity.population);
 
 const maxCity = all_cities.reduce((maxCity, city) => city.population > maxCity.population ? city : maxCity);
 console.info('City with max. population: ', maxCity.name, maxCity.population);
+
+const array_count_by = (array, property, value) => array.reduce((a, v) => v[property] === value ? a + 1 : a, 0);
+console.log('Quebec city count:', array_count_by(all_cities, 'province', 'Quebec'));
+console.log('Ontario city count:', array_count_by(all_cities, 'province', 'Ontario'));
