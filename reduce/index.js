@@ -28,3 +28,12 @@ console.info('City with max. population: ', maxCity.name, maxCity.population);
 const array_count_by = (array, property, value) => array.reduce((a, v) => v[property] === value ? a + 1 : a, 0);
 console.log('Quebec city count:', array_count_by(all_cities, 'province', 'Quebec'));
 console.log('Ontario city count:', array_count_by(all_cities, 'province', 'Ontario'));
+
+const city_avg_population = all_cities.reduce((acc, curr, index, array) => {
+    if (index == array.length-1){
+        return acc/array.length;
+    }
+
+    return acc + curr.population;
+}, 0);
+console.log("All cities average population:", city_avg_population);
