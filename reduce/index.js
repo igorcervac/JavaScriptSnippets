@@ -37,3 +37,16 @@ const city_avg_population = all_cities.reduce((acc, curr, index, array) => {
     return acc + curr.population;
 }, 0);
 console.log("All cities average population:", city_avg_population);
+
+const groupedByProvince = all_cities.reduce((acc, cur)=> {
+    if (!acc[cur.province]){
+        acc[cur.province] = [];
+    }
+    acc[cur.province].push(cur);
+    return acc;
+}, {});
+
+for (let province in groupedByProvince){
+    let provinceCities = groupedByProvince[province].map(x => x.name).join(', ');
+    console.log(province, ':', provinceCities);
+}
