@@ -25,11 +25,4 @@ function Certification(title, year, company){
     this.about = function(){
         console.log(this.description);
     }
-}
-
-var certification = new Certification('AI-102', 2023, 'Microsoft');
-certification.about();
-
-certification.year = 2024;
-certification.about();
-
+};
