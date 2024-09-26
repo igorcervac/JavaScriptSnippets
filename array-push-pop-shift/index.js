@@ -10,6 +10,11 @@ console.log('Pop:');
 planets.pop();
 console.table(planets);
 
+console.log('Unshift');
+planets.unshift('Pluto');
+console.table(planets);
+
 console.log('Shift:');
 planets.shift();
 console.table(planets);
+
