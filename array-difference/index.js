@@ -1,8 +1,8 @@
-const ar = [1, 1, 2, 3, 5, 8];
-const ar2 = [1, 5, 8];
+const array = [1, 1, 2, 3, 5, 8];
+const array2 = [1, 5, 8];
 
-const diff = ar.filter(x => !ar2.includes(x));
+const difference = array.filter(x => !array2.includes(x));
 
-console.log('Array:', ar);
-console.log('Array2:', ar2);
-console.log('Difference:', diff);
+console.log('Array:', array);
+console.log('Array2:', array2);
+console.log('Difference:', difference);
